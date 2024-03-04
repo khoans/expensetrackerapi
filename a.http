@@ -7,7 +7,7 @@ GET {{baseUrl}}/expenses?sort=name,asc
 
 ### GET EXPENSE BY ID
 
-GET {{baseUrl}}/expense?id=5
+GET {{baseUrl}}/expenses/10
 
 ### DELETE EXPENSE
 
