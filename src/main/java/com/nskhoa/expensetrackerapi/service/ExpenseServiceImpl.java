@@ -1,6 +1,5 @@
 package com.nskhoa.expensetrackerapi.service;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +9,8 @@ import org.springframework.stereotype.Service;
 
 import com.nskhoa.expensetrackerapi.entity.Expense;
 import com.nskhoa.expensetrackerapi.exceptions.ExpenseNotFoundException;
+import com.nskhoa.expensetrackerapi.exceptions.ResourceNotFoundException;
 import com.nskhoa.expensetrackerapi.repository.ExpenseRepository;
-
-import lombok.NonNull;
 
 @Service
 public class ExpenseServiceImpl implements ExpenseService {
@@ -30,7 +28,7 @@ public class ExpenseServiceImpl implements ExpenseService {
         if (expense.isPresent()) {
             return expense.get();
         }
-        throw new ExpenseNotFoundException("Expense is not found for the id " + id);
+        throw new ResourceNotFoundException("Expense is not found for the id " + id);
     }
 
     @Override

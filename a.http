@@ -1,5 +1,5 @@
-@baseUrl = http://localhost:8080/api/v1
 
+@baseUrl = http://localhost:8080/api/v1
 ### GET ALL EXPENSES | query: int size, int page, string sort (asc,desc)
 
 GET {{baseUrl}}/expenses?sort=name,asc
@@ -7,7 +7,7 @@ GET {{baseUrl}}/expenses?sort=name,asc
 
 ### GET EXPENSE BY ID
 
-GET {{baseUrl}}/expenses/10
+GET {{baseUrl}}/expenses/10s
 
 ### DELETE EXPENSE
 
