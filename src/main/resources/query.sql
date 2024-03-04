@@ -18,7 +18,9 @@ INSERT INTO
         description,
         expense_amount,
         category,
-        date
+        date,
+        created_at,
+        updated_at
     )
 VALUES
     (
@@ -26,7 +28,9 @@ VALUES
         "water bill",
         600.00,
         "Bills",
-        "2021-10-14"
+        "2021-10-14",
+        NOW (),
+        NOW ()
     );
 
 INSERT INTO
@@ -35,7 +39,9 @@ INSERT INTO
         description,
         expense_amount,
         category,
-        date
+        date,
+        created_at,
+        updated_at
     )
 VALUES
     (
@@ -43,5 +49,7 @@ VALUES
         "electricity bill",
         900.00,
         "Bills",
-        "2021-10-13"
+        "2021-10-13",
+        NOW (),
+        NOW ()
     );
