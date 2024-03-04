@@ -1,14 +1,11 @@
 @baseUrl = http://localhost:8080/api/v1
-### GET
 
-GET {{baseUrl}}/expenses
+### GET ALL EXPENSES | query: int size, int page, string sort (asc,desc)
 
-### GET
-
-GET {{baseUrl}}/expenses/2
+GET {{baseUrl}}/expenses?sort=name,asc
 
 
-### GET
+### GET EXPENSE BY ID
 
 GET {{baseUrl}}/expense?id=5
 

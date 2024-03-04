@@ -1,8 +1,10 @@
-package com.nskhoa.expensetrackerapi;
+package com.nskhoa.expensetrackerapi.controller;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,8 +25,8 @@ public class ExpenseController {
     private ExpenseService expenseService;
 
     @GetMapping(path = "/expenses")
-    public List<Expense> getAllExpenses() {
-        return expenseService.getAllExpenses();
+    public List<Expense> getAllExpenses(Pageable page) {
+        return expenseService.getAllExpenses(page).toList();
     }
 
     @GetMapping(path = "/expenses/{id}")
@@ -53,5 +55,4 @@ public class ExpenseController {
     public Expense updateExpenseDetails(@PathVariable Long id, @RequestBody Expense expense) {
         return expenseService.updateExpenseDetails(id, expense);
     }
-
 }

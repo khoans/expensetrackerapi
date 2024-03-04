@@ -2,11 +2,14 @@ package com.nskhoa.expensetrackerapi.service;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import com.nskhoa.expensetrackerapi.entity.Expense;
 
 public interface ExpenseService {
 
-    List<Expense> getAllExpenses();
+    Page<Expense> getAllExpenses(Pageable page);
 
     Expense getExpenseById(Long id);
 
