@@ -19,7 +19,7 @@ POST {{baseUrl}}/expenses
 Content-Type: application/json
 
 {
-    "name":"Water Bill",
+    "name":"Wa",
     "amount":900.00,
     "category":"Bills",
     "description":"water bill",
@@ -28,13 +28,13 @@ Content-Type: application/json
 
 ### UPDATE EXPENSE
 
-PUT {{baseUrl}}/expenses/5
+PUT {{baseUrl}}/expenses/6
 Content-Type: application/json
 
 {
-    "name":"Water Bill",
+    "name":"Pet Bill",
     "amount":400.00,
     "category":"Bills",
-    "description":"water bill",
+    "description":"pet bill",
     "date":"2021-10-15"
 }
