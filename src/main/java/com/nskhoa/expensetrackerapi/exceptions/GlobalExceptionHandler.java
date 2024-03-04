@@ -62,7 +62,6 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @Nullable
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
             HttpHeaders headers, HttpStatusCode status, WebRequest request) {
-        // TODO Auto-generated method stub
         Map<String, Object> body = new HashMap<>();
         body.put("timestamp", new Date());
         body.put("status", status.value());

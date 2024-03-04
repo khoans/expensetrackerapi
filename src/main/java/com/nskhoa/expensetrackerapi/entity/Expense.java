@@ -13,6 +13,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -31,18 +32,20 @@ public class Expense {
     private Long id;
 
     @Column(name = "expense_name")
-    @NotNull(message = "Expense name cannot be null")
+    @NotBlank(message = "Expense name cannot be null")
     @Size(min = 3, max = 255, message = "Expense name must be between 1 and 255 characters")
     private String name;
 
     private String description;
 
     @Column(name = "expense_amount")
-
+    @NotNull(message = "Expense amount cannot be null")
     private BigDecimal amount;
 
+    @NotBlank(message = "Category cannot be null")
     private String category;
 
+    @NotNull(message = "Date cannot be null")
     private Date date;
 
     @Column(name = "created_at", nullable = false, updatable = false)

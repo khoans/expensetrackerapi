@@ -19,7 +19,7 @@ POST {{baseUrl}}/expenses
 Content-Type: application/json
 
 {
-    "name":"Wa",
+    "name":"        ",
     "amount":900.00,
     "category":"Bills",
     "description":"water bill",
