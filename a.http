@@ -19,22 +19,36 @@ POST {{baseUrl}}/expenses
 Content-Type: application/json
 
 {
-    "name":"        ",
-    "amount":900.00,
-    "category":"Bills",
-    "description":"water bill",
+    "name":"Onions",
+    "amount":20.00,
+    "category":"Vegetables",
+    "description":"Vegetables",
     "date":"2021-11-20"
 }
 
 ### UPDATE EXPENSE
 
-PUT {{baseUrl}}/expenses/6
+PUT {{baseUrl}}/expenses/3
 Content-Type: application/json
 
 {
     "name":"Pet Bill",
     "amount":400.00,
-    "category":"Bills",
+    "category":"Pet",
     "description":"pet bill",
     "date":"2021-10-15"
 }
+
+### GET EXPENSE BY CATEGORY
+
+GET {{baseUrl}}/expenses/category?category=Bills
+
+
+### GET EXPENSE BY Name
+
+GET {{baseUrl}}/expenses/name?name=Pet
+
+
+### GET EXPENSE BY Date
+
+GET {{baseUrl}}/expenses/date?startDate=2021-10-15&endDate=2021-10-19

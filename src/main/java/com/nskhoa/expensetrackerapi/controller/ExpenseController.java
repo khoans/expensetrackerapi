@@ -1,9 +1,11 @@
 package com.nskhoa.expensetrackerapi.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -56,6 +58,23 @@ public class ExpenseController {
     @PutMapping(path = "/expenses/{id}")
     public Expense updateExpenseDetails(@PathVariable Long id, @RequestBody Expense expense) {
         return expenseService.updateExpenseDetails(id, expense);
+    }
+
+    @GetMapping(path = "/expenses/category")
+    public List<Expense> getExpensesByCategory(@RequestParam String category, Pageable page) {
+        return expenseService.readByCategory(category, page);
+    }
+
+    @GetMapping(path = "/expenses/name")
+    public List<Expense> getExpensesByName(@RequestParam String name, Pageable page) {
+        return expenseService.readByName(name, page);
+    }
+
+    @GetMapping(path = "/expenses/date")
+    public List<Expense> getAllExpensesByDate(
+            @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") Date startDate,
+            @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate, Pageable page) {
+        return expenseService.readByDate(startDate, endDate, page);
     }
 
 }

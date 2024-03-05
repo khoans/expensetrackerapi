@@ -108,6 +108,82 @@
 			"response": []
 		},
 		{
+			"name": "Read Expenses with category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/expenses/category?category=Bills",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"expenses",
+						"category"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "Bills"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Expenses with name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/expenses/name?name=Electricity",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"expenses",
+						"name"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Electricity"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Expenses with date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/expenses/date?startDate=2021-10-15&endDate=2021-10-19",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"expenses",
+						"date"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2021-10-15"
+						},
+						{
+							"key": "endDate",
+							"value": "2021-10-19"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Read Expense by Id",
 			"request": {
 				"method": "GET",
