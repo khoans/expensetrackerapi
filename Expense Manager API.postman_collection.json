@@ -7,222 +7,258 @@
 	},
 	"item": [
 		{
-			"name": "Post Expense",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \r\n    \"name\":\"Internet Bill\",\r\n    \"amount\":700.00,\r\n    \"category\":\"Bills\",\r\n    \"description\":\"internet bill\",\r\n    \"date\":\"2021-10-15\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"khoa1234\",\r\n    \"email\":\"khoans124@gmail.com\",\r\n    \"password\":\"Kietack!597538426\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"register"
+							]
 						}
-					}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Expense",
+			"item": [
+				{
+					"name": "Post Expense",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"name\":\"Internet Bill\",\r\n    \"amount\":700.00,\r\n    \"category\":\"Bills\",\r\n    \"description\":\"internet bill\",\r\n    \"date\":\"2021-10-15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/expenses",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"expenses"
+							]
+						}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{baseUrl}}/expenses",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"expenses"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Expense",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"Internet Bill\",\r\n    \"amount\":700.00,\r\n    \"category\":\"Bills\",\r\n    \"description\":\"internet bill\",\r\n    \"date\":\"2021-10-15\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "Update Expense",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Internet Bill\",\r\n    \"amount\":700.00,\r\n    \"category\":\"Bills\",\r\n    \"description\":\"internet bill\",\r\n    \"date\":\"2021-10-15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/expenses/3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"expenses",
+								"3"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{baseUrl}}/expenses/3",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"expenses",
-						"3"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Read Expenses",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/expenses",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"expenses"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Read Expenses with params",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/expenses?page=1&size=2&sort=amount,desc",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"expenses"
-					],
-					"query": [
-						{
-							"key": "page",
-							"value": "1"
-						},
-						{
-							"key": "size",
-							"value": "2"
-						},
-						{
-							"key": "sort",
-							"value": "amount,desc"
+				{
+					"name": "Read Expenses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/expenses",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"expenses"
+							]
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Read Expenses with category",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/expenses/category?category=Bills",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"expenses",
-						"category"
-					],
-					"query": [
-						{
-							"key": "category",
-							"value": "Bills"
+					},
+					"response": []
+				},
+				{
+					"name": "Read Expenses with params",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/expenses?page=1&size=2&sort=amount,desc",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"expenses"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "2"
+								},
+								{
+									"key": "sort",
+									"value": "amount,desc"
+								}
+							]
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Read Expenses with name",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/expenses/name?name=Electricity",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"expenses",
-						"name"
-					],
-					"query": [
-						{
-							"key": "name",
-							"value": "Electricity"
+					},
+					"response": []
+				},
+				{
+					"name": "Read Expenses with category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/expenses/category?category=Bills",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"expenses",
+								"category"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "Bills"
+								}
+							]
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Read Expenses with date",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/expenses/date?startDate=2021-10-15&endDate=2021-10-19",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"expenses",
-						"date"
-					],
-					"query": [
-						{
-							"key": "startDate",
-							"value": "2021-10-15"
-						},
-						{
-							"key": "endDate",
-							"value": "2021-10-19"
+					},
+					"response": []
+				},
+				{
+					"name": "Read Expenses with name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/expenses/name?name=Electricity",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"expenses",
+								"name"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Electricity"
+								}
+							]
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Read Expense by Id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/expenses/2",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"expenses",
-						"2"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete Expense by Id",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/expenses?id=2",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"expenses"
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "2"
+					},
+					"response": []
+				},
+				{
+					"name": "Read Expenses with date",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/expenses/date?startDate=2021-10-15&endDate=2021-10-19",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"expenses",
+								"date"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2021-10-15"
+								},
+								{
+									"key": "endDate",
+									"value": "2021-10-19"
+								}
+							]
 						}
-					]
+					},
+					"response": []
+				},
+				{
+					"name": "Read Expense by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/expenses/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"expenses",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Expense by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/expenses?id=2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"expenses"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }

@@ -52,3 +52,17 @@ GET {{baseUrl}}/expenses/name?name=Pet
 ### GET EXPENSE BY Date
 
 GET {{baseUrl}}/expenses/date?startDate=2021-10-15&endDate=2021-10-19
+
+
+
+### CREATE USER
+
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+    "name":"khoa123",
+    "email":"khoans123@gmail.com",
+    "password":"Kietack!597538426"
+}
+
