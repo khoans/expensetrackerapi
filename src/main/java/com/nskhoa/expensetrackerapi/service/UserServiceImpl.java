@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.nskhoa.expensetrackerapi.entity.User;
 import com.nskhoa.expensetrackerapi.entity.UserModel;
 import com.nskhoa.expensetrackerapi.exceptions.ItemAlreadyExistsException;
+import com.nskhoa.expensetrackerapi.exceptions.ResourceNotFoundException;
 import com.nskhoa.expensetrackerapi.repository.UserRepository;
 
 @Service
@@ -22,5 +23,14 @@ public class UserServiceImpl implements UserService {
         User newUser = new User();
         BeanUtils.copyProperties(uModel, newUser);
         return userRepository.save(newUser);
+    }
+
+    @Override
+    public User readUser(Long id) {
+        if (id == null) {
+            throw new ResourceNotFoundException("User id can not be null");
+        }
+        return userRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found for the id " + id));
     }
 }

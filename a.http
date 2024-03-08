@@ -61,8 +61,14 @@ POST {{baseUrl}}/register
 Content-Type: application/json
 
 {
-    "name":"khoa123",
-    "email":"khoans123@gmail.com",
+    "name":"khoa1232",
+    "email":"khoans1232@gmail.com",
     "password":"Kietack!597538426"
 }
+
+### READ USER BY ID
+
+GET {{baseUrl}}/user/4
+Content-Type: application/json
+
 

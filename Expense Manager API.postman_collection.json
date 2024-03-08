@@ -34,6 +34,24 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Read User by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/user/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
