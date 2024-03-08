@@ -20,11 +20,17 @@ public class ExpenseServiceImpl implements ExpenseService {
 
     @Override
     public Page<Expense> getAllExpenses(Pageable page) {
+        if (page == null) {
+            page = Pageable.unpaged();
+        }
         return expenseRepo.findAll(page);
     }
 
     @Override
     public Expense getExpenseById(Long id) {
+        if (id == null) {
+            throw new ResourceNotFoundException("Expense id can not be null");
+        }
         Optional<Expense> expense = expenseRepo.findById(id);
         if (expense.isPresent()) {
             return expense.get();

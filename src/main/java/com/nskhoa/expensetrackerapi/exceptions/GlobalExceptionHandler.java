@@ -10,6 +10,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -60,8 +61,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @Override
     @Nullable
-    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
-            HttpHeaders headers, HttpStatusCode status, WebRequest request) {
+    protected ResponseEntity<Object> handleMethodArgumentNotValid(@NonNull MethodArgumentNotValidException ex,
+            @NonNull HttpHeaders headers, @NonNull HttpStatusCode status, @NonNull WebRequest request) {
         Map<String, Object> body = new HashMap<>();
         body.put("timestamp", new Date());
         body.put("status", status.value());
@@ -75,5 +76,15 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         body.put("errors", errors);
 
         return new ResponseEntity<>(body, headers, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(ItemAlreadyExistsException.class)
+    public ResponseEntity<Object> handleItemExistsException(ItemAlreadyExistsException ex, WebRequest request) {
+        ErrorObject errorObject = new ErrorObject();
+        errorObject.setStatusCode(HttpStatus.CONFLICT.value());
+        errorObject.setMessage(ex.getMessage());
+        errorObject.setTimestamp(new Date());
+        return new ResponseEntity<Object>(errorObject, HttpStatus.CONFLICT);
+        // return errorObject;
     }
 }
