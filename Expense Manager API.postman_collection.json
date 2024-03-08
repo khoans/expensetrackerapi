@@ -28,6 +28,24 @@
 					"response": []
 				},
 				{
+					"name": "Delete User By ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/user/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Read User by ID Copy",
 					"request": {
 						"method": "PUT",

@@ -83,3 +83,9 @@ Content-Type: application/json
     "age":"20"
 }
 
+
+### DELETE USER BY ID
+
+DELETE {{baseUrl}}/user/4
+Content-Type: application/json
+

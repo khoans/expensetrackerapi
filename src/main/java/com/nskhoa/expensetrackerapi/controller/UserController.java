@@ -3,6 +3,7 @@ package com.nskhoa.expensetrackerapi.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,6 +37,15 @@ public class UserController {
     public ResponseEntity<User> update(@PathVariable("id") Long id, @RequestBody User user) {
         User updatedUser = userService.update(user, id);
         return new ResponseEntity<User>(updatedUser, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/user/{id}")
+    public ResponseEntity<User> DeleteUserById(@PathVariable("id") Long id) {
+        if (id == null) {
+            return new ResponseEntity<User>(HttpStatus.BAD_REQUEST);
+        }
+        userService.delete(id);
+        return new ResponseEntity<User>(HttpStatus.NO_CONTENT);
     }
 
 }
