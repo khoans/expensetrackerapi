@@ -10,6 +10,51 @@
 			"name": "User",
 			"item": [
 				{
+					"name": "Read User by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/user/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read User by ID Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"khoa1\",\r\n    \"email\":\"khoans11@gmail.com\",\r\n    \"age\":\"20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user/4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Create User",
 					"request": {
 						"method": "POST",
@@ -30,24 +75,6 @@
 							],
 							"path": [
 								"register"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Read User by ID",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/user/1",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"user",
-								"1"
 							]
 						}
 					},

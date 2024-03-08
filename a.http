@@ -72,3 +72,14 @@ GET {{baseUrl}}/user/4
 Content-Type: application/json
 
 
+### UPDATE USER BY ID
+
+PUT {{baseUrl}}/user/4
+Content-Type: application/json
+
+{
+    "name":"khoa1",
+    "email":"khoans11@gmail.com",
+    "age":"20"
+}
+
